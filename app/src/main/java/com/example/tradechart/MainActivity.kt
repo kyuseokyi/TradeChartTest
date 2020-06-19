@@ -1,6 +1,7 @@
 package com.example.tradechart
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -14,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        try {
+            com.scichart.charting.visuals.SciChartSurface.setRuntimeLicenseKey("wv2EOfL+DioOF0IHeuxlJ3RcR095j5hC4YDm9S+f5sssvSZTbHU7a2jk8JeeazGueebb4oTN7qZ2rwVKq/YcUqWEs6d2z7aa2OOR4kBABL57IEUWLnovNMq3CYY3/MGa/fgyg7i6khnBlq9oVg13MVzqhupIJ0Vh7y08jK45QvZyl8C06PQzUH2vfG5rpWx9hXZ+kpzMvOmycW6vfLABUtd191GmYyvjBE6r+P8CaXX+Na4bNQ4DtYA+/74aqSBkZCDMTfbTDlsaN60lYoZAI9FPtbci5kRJu3CN/WmQDNP4iPd25bd07ZKMtDXs+tAE68qpbSVTIy+aIaUzrG086NSShLeqV6RnzeET1vCcGsMvxmRZfnjo5RhPeiCkDI3qkfbWfBUrlHVUGDZXuwc0gaby7rEySximCQehw1Zymyy9lwHravlPVYw753N4uYRZrYuBlZxFwI/IgzrEMSD119ktdVbvKDa9YL8oW0tRyh3voEza1YE1S7mwi1GjSayPOU/Y/66Ztl0nlldNgK31bLTmuSmD3oxSb2lrkzJG8t4Y65UZ9NnyVog99XJtYGadgD0uvGP+cQ==")
+        } catch (e: Exception) {
+            Log.e("SciChart", "Error when setting the license", e)
+        }
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
